@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: devops
+ spec:
+  selector:
+    matchLabels:
+      app: devops
+  replica: 2
+  template:
+    metadata:
+      label:
+        app: devops
+  spec:
+    container:
+      - name: devops
+        image: Pranav9122000/Pranav-DevOps-Assignment:latest
+        imagePullPolicy: IfNotPresent
+        
+     ports:
+      - containerPorts: 8080
+        
+        
